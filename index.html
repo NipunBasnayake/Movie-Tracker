@@ -87,7 +87,6 @@
             </div>
         </section>
         
-
         <section id="watchList">
             <div class="row mt-5 pt-4">
                 <div class="col-lg-8 col-md-10 col-12 mx-auto text-center">
@@ -100,44 +99,34 @@
         </section>
 
         <section id="recentReviews">
-            <div class="row mt-5 pt-4">
-                <div class="col-lg-8 col-md-10 col-12 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mt-5 p-5 text-white">Recent Reviews</h1>
+            <div class="bg-dark p-3 rounded-5 w-75 mx-auto">
+                <div class="row pt-4">
+                    <div class="col-lg-8 col-md-10 col-12 mx-auto text-center">
+                        <h1 class="display-4 fw-bold p-2 text-white">Recent Reviews</h1>
+                    </div>
                 </div>
+                <div class="row" id="reviewRow"> </div>
             </div>
-            <div class="row">
-                <div class="card col-lg-3 col-md-6 col-12 mx-auto" >
-                    <div class="card-body">
-                        <h5 class="card-title">Bill Gates</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+            
+        </section>
+
+        <section id="addReviews">
+            <div class="bg-dark p-3 rounded-5 w-75 mx-auto mt-5">
+                <div class="row pt-4">
+                    <div class="col-lg-8 col-md-10 col-12 mx-auto text-center">
+                        <h1 class="display-4 fw-bold p-2 text-white">Add Reviews</h1>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8">
+                        <input type="text" placeholder="Enter Name" id="txtName" class="form form-control m-3 w-100 mx-auto">
+                        <input type="text" placeholder="Enter Review" id="txtReview" class="form form-control m-3 w-100 mx-auto">
+                        <button type="button" class="btn btn-light mx-auto d-block mb-5" onclick="addReview()">Submit Review</button>
                     </div>
                 </div>
             </div>
         </section>
-
-        
-        <section id="addReviews">
-            <div class="row mt-5 pt-4">
-                <div class="col-lg-8 col-md-10 col-12 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mt-5 p-5 text-white">Add Reviews</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input type="text" placeholder="Enter Name" id="txtName" class="form form-control m-3 w-75 mx-auto">
-                    <input type="text" placeholder="Enter Name" id="txtReview" Class="form form-control m-3 w-75 mx-auto">
-                    <input type="button" placeholder="Add Review" id="btnSubmit" Class="btn btn-dark m-3 w-75 mx-auto">
-                </div>
-            </div>
-
-        </section>
-
-
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -148,5 +137,3 @@
 </body>
 
 </html>
-
-

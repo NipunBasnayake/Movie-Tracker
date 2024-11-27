@@ -75,35 +75,22 @@ let watchListArray = [];
 let divWatchlist = document.getElementById("divWatchlist");
 
 function addWatchlist(indexa) {
-  let movieExists = watchListArray.some(element => element.index === indexa);
-  
-  if (movieExists) {
-    console.log("Movie already in watchlist.");
-    return;
-  }
   let movie = movieList.find(element => element.index === indexa);
-  
-  if (movie) {
-    watchListArray.push(movie);
-  }
+  watchListArray.push(movie);
   printWatchlist();
 }
 
 function removeWatchlist(indexa) {
   const movieIndex = watchListArray.findIndex(element => element.index === indexa);
-  
-  if (movieIndex !== -1) {
-    watchListArray.splice(movieIndex, 1);
-  }
-
+  watchListArray.splice(movieIndex, 1);
   printWatchlist();
 }
 
 function printWatchlist() {
   let watchListBody = "";
   watchListArray.forEach(element => {
-    watchListBody += 
-    `<div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+    watchListBody +=
+      `<div class="col-lg-3 col-md-6 col-sm-12 mb-4">
       <div class="card" style="width: 18rem;">
         <img src="${element.image}" class="card-img-top" alt="${element.title}">
         <div class="card-body">
@@ -117,6 +104,37 @@ function printWatchlist() {
   });
 
   divWatchlist.innerHTML = watchListBody;
+}
+
+let reviewArray = [];
+
+function addReview() {
+  let txtReview = document.getElementById("txtReview").value;
+  let txtName = document.getElementById("txtName").value;
+
+  reviewArray.push({
+    name: txtName,
+    review: txtReview
+  });
+  printReviews();
+}
+
+let reviewRow = document.getElementById("reviewRow");
+
+function printReviews() {
+  let reviewBody = '';
+  reviewArray.forEach(element => {
+    reviewBody += 
+    `<div class="col">
+      <div class="card col-lg-4 col-md-6 col-sm-12 mx-auto">
+          <div class="card-body">
+              <h5 class="card-title">${element.name}</h5>
+              <p class="card-text">${element.review}</p>
+          </div>
+      </div>
+    </div>`;
+  });
+  reviewRow.innerHTML = reviewBody;
 }
 
 
@@ -147,7 +165,7 @@ const ctx2 = document.getElementById('myChart2');
 new Chart(ctx2, {
   type: 'line',
   data: {
-    labels: filmGenre,
+    labels: filmNames,
     datasets: [{
       label: '# of Votes',
       data: filmWatchCount,
@@ -168,7 +186,7 @@ const ctx3 = document.getElementById('myChart3');
 new Chart(ctx3, {
   type: 'pie',
   data: {
-    labels: filmNames,
+    labels: filmGenre,
     datasets: [{
       label: '# of Votes',
       data: filmRate,
